@@ -1,0 +1,26 @@
+{
+  "cards": {
+    "dark_embrace": "card_dark_embrace_300.png",
+    "knife_trap": "card_knife_trap_300.png",
+    "beat_into_shape": "card_beat_into_shape_300.png",
+    "end_of_days": "card_end_of_days_300.png",
+    "voltaic": "card_voltaic_300.png"
+  },
+  "frames": {
+    "frame_attack_red": "frame_attack_red.png",
+    "frame_attack_green": "frame_attack_green.png",
+    "frame_attack_orange": "frame_attack_orange.png",
+    "frame_attack_pink": "frame_attack_pink.png",
+    "frame_attack_blue": "frame_attack_blue.png",
+    "frame_skill_red": "frame_skill_red.png",
+    "frame_skill_green": "frame_skill_green.png",
+    "frame_skill_orange": "frame_skill_orange.png",
+    "frame_skill_pink": "frame_skill_pink.png",
+    "frame_skill_blue": "frame_skill_blue.png",
+    "frame_power_red": "frame_power_red.png",
+    "frame_power_green": "frame_power_green.png",
+    "frame_power_orange": "frame_power_orange.png",
+    "frame_power_pink": "frame_power_pink.png",
+    "frame_power_blue": "frame_power_blue.png"
+  }
+}
