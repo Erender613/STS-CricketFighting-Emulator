@@ -1,0 +1,156 @@
+{
+ "seed": 20260922,
+ "hz": 120,
+ "capSec": 240,
+ "gamesPerPair": 100,
+ "hero": "charge",
+ "heroName": "冲锋！！",
+ "rows": [
+  {
+   "id": "snakebite",
+   "name": "蛇咬",
+   "games": 100,
+   "win": 84,
+   "lose": 16,
+   "draw": 0,
+   "winRate": 0.84,
+   "avgTime": 91.96850000001851
+  },
+  {
+   "id": "perfected_strike",
+   "name": "完美打击",
+   "games": 100,
+   "win": 70,
+   "lose": 30,
+   "draw": 0,
+   "winRate": 0.7,
+   "avgTime": 62.56050000000112
+  },
+  {
+   "id": "dark_embrace",
+   "name": "黑暗之拥",
+   "games": 100,
+   "win": 66,
+   "lose": 34,
+   "draw": 0,
+   "winRate": 0.66,
+   "avgTime": 59.01816666666734
+  },
+  {
+   "id": "pillage",
+   "name": "劫掠",
+   "games": 100,
+   "win": 63,
+   "lose": 37,
+   "draw": 0,
+   "winRate": 0.63,
+   "avgTime": 55.6124999999991
+  },
+  {
+   "id": "lightning_rod",
+   "name": "引雷针",
+   "games": 100,
+   "win": 45,
+   "lose": 55,
+   "draw": 0,
+   "winRate": 0.45,
+   "avgTime": 76.14650000000738
+  },
+  {
+   "id": "sleight_of_flesh",
+   "name": "血肉戏法",
+   "games": 100,
+   "win": 43,
+   "lose": 57,
+   "draw": 0,
+   "winRate": 0.43,
+   "avgTime": 61.95633333333418
+  },
+  {
+   "id": "darkness",
+   "name": "漆黑",
+   "games": 100,
+   "win": 20,
+   "lose": 80,
+   "draw": 0,
+   "winRate": 0.2,
+   "avgTime": 59.13241666666567
+  },
+  {
+   "id": "defy",
+   "name": "违逆",
+   "games": 100,
+   "win": 20,
+   "lose": 80,
+   "draw": 0,
+   "winRate": 0.2,
+   "avgTime": 62.65866666666943
+  },
+  {
+   "id": "expose",
+   "name": "暴露",
+   "games": 100,
+   "win": 17,
+   "lose": 83,
+   "draw": 0,
+   "winRate": 0.17,
+   "avgTime": 54.48566666666547
+  },
+  {
+   "id": "beat_into_shape",
+   "name": "锻打成型",
+   "games": 100,
+   "win": 2,
+   "lose": 98,
+   "draw": 0,
+   "winRate": 0.02,
+   "avgTime": 49.73283333333194
+  },
+  {
+   "id": "guiding_star",
+   "name": "引导之星",
+   "games": 100,
+   "win": 2,
+   "lose": 98,
+   "draw": 0,
+   "winRate": 0.02,
+   "avgTime": 70.69650000000506
+  },
+  {
+   "id": "voltaic",
+   "name": "电流相生",
+   "games": 100,
+   "win": 1,
+   "lose": 99,
+   "draw": 0,
+   "winRate": 0.01,
+   "avgTime": 57.381249999998154
+  },
+  {
+   "id": "knife_trap",
+   "name": "刀刃陷阱",
+   "games": 100,
+   "win": 0,
+   "lose": 100,
+   "draw": 0,
+   "winRate": 0,
+   "avgTime": 43.58716666666484
+  },
+  {
+   "id": "end_of_days",
+   "name": "末日降临",
+   "games": 100,
+   "win": 0,
+   "lose": 100,
+   "draw": 0,
+   "winRate": 0,
+   "avgTime": 39.62699999999841
+  }
+ ],
+ "overall": {
+  "games": 1400,
+  "win": 433,
+  "draw": 0,
+  "winRate": 0.3092857142857143
+ }
+}

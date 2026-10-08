@@ -1,0 +1,81 @@
+# 探针/构建的临时产物，不入库
+tools/_*.txt
+tools/_*_probe.html
+# 探针输出（截图/日志/产物 HTML 可重新生成；_probe 里的 py/js 测量脚本保留入库）
+tools/_probe/*.png
+tools/_probe/*.txt
+tools/_probe/*.html
+# 受控 A/B 的临时产物：对照组 HTML（逐条回退而成，各 ~12MB，可随时用
+# tools/_ab_charge_split.js / git show 重建）+ 各组的平衡快照 json
+# （tools/_balance.json 是正式产物，仍要入库，故下面这条不能匹配它）
+tools/_art_*.html
+tools/_balance_*.json
+# verify_browser.py 每次跑都会生成的"注入探针的产物副本"（很大，可随时重建）
+tools/_probe/_v_*.html
+__pycache__/
+*.pyc
+
+# 探针用的临时 Chrome 配置 / 烘焙缓存（Chrome 每次跑都会重写，别入库）
+tools/_chrome*/
+tools/bake/vram/
+*.log
+
+# 无头验收截图（每次跑 _ui_check.js 重生成）
+tools/_ui/
+
+# 录制模式 / 种子 / 水印的浏览器验收结果（每次跑 _rec_check.js 重生成）
+tools/_rec/
+
+# 原版音乐提取的中间产物：从反编译目录切出来的 FMOD bank、解码后的 wav、
+# build_bgm.py 的解码缓存。合计约 880MB，全部可由 tools/_sts2/*.py 重新生成，
+# 所以不入库；同目录下的脚本、Godot 解码工程（godotproj/）要入库。
+tools/_sts2/banks/
+tools/_sts2/bgm/
+tools/_sts2/_tmp_bgm/
+tools/_sts2/dl/
+tools/_sts2/*.fsb
+
+# 浏览器探针的 Chrome 配置目录（tools/_obs_probe.js 每次跑都会重写）
+tools/_obs/
+.zcode/
+tools/bake/_*.txt
+
+# ===== GitHub 入库范围（2026-10-08 定稿）：只入库 src/ + tools/脚本与必要素材 + assets/ + 正式版产物 =====
+# AI 工作记忆/会话数据，私有，不入库
+.workbuddy/
+# 误建的 0 字节空文件
+/f
+# 探针截图预览目录
+tools/预览图/
+# 探针用的 Chrome 配置目录与探针产物 HTML（此前漏网被跟踪）
+tools/_cp2/
+tools/_probe*.html
+tools/_game_slim.html
+# 素材提取/烘焙的可再生中间产物（最终成品都在 assets/，可由脚本重新生成）
+tools/_sts2/godotproj/vram/
+tools/_sts2/godotproj/out/
+tools/bake/out/
+# 平衡测试的生成报告（balance.js / make_report.js 可重新生成）
+tools/平衡矩阵*.csv
+tools/平衡矩阵*.md
+tools/胜率表*.md
+/对战胜率表*.html
+# 只传正式版产物；开发者版与工作对照截图/文档留在本地
+/杀戮尖塔小球对决_开发者版.html
+/按钮对照.png
+/结算横幅过渡效果.png
+/种子显示效果.png
+/水印效果.png
+/录制模式效果.png
+/战斗开始过场效果.jpg
+/战斗开始过场_同步消失.jpg
+/战斗开始过场_后半段提速.jpg
+/机制设定.txt
+/素材确认清单.md
+/卡牌机制说明.md
+/小球对决_杀戮尖塔2_开发计划.md
+
+# ===== 面向 AI agent 的工作文档/残留（只在本地，不入库，2026-10-08 追加）=====
+/tools/README_开发者版.md
+tools/_sts2/_subsongs.txt
+/tools/err.txt
