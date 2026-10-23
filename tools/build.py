@@ -57,7 +57,11 @@ CARD_IDS = ["dark_embrace", "knife_trap", "beat_into_shape", "end_of_days", "vol
             # token 衍生卡（不进选卡界面，游戏内召唤物外观）
             "minion_dive",
             # 灵魂：灵魂风暴召出的小单位，和主卡一样带卡框/缎带（用户明确要求）
-            "soul"]
+            "soul",
+            # 观者 4 张（选卡界面最右侧一列；设置里开「观者卡牌」才出现在选卡池）
+            "talk_to_the_hand", "alpha", "prostrate", "wish",
+            # 观者衍生物/许愿卡面（不进选卡界面：贝塔/欧米伽单位、许愿三选一浮现）
+            "beta", "omega", "become_almighty", "fame_and_fortune", "live_forever"]
 SPRITES = ["sp_knife_thrown", "sp_lightning_orb",
            # 恶魔之手：反编译里「夜魇」屏幕特效用的 spooky_hand.png
            "sp_demon_hand",
@@ -78,6 +82,16 @@ SPRITES = ["sp_knife_thrown", "sp_lightning_orb",
            "sp_block",           # 余像：格挡护罩
            "pw_vulnerable", "pw_weak", "pw_doom", "pw_focus", "pw_poison",
            "pw_block",           # 能力图标（转盘/徽标/格挡）
+           # 观者 4 卡的状态图标/特效贴图（反编译 Watcher.pck + 本体资源）
+           "pw_block_return",    # 以手拒之：手掌虚影（watcher mod 的 BlockReturn power 图标）
+           "pw_mantra",          # 真言（watcher mod power 图标）
+           "pw_plated_armor",    # 多层护甲（watcher mod power 图标）
+           "pw_divinity",        # 神格（watcher mod 姿态图标）
+           "pw_strength",        # 力量（本体 power 图标）
+           "sp_eye_anim",        # 神格动态特效：睁眼 7 帧横排（watcher mod vfx）
+           "sp_big_blur",        # 神格光晕（watcher mod vfx）
+           "sp_glow_spark",      # 神格/力大无穷粒子（watcher mod vfx）
+           "sp_coin",            # 许愿·名利双收：金币（本体 coin vfx）
            # 角色系统：五个角色的选人头像与计分条小图标
            # （提取自 STS2 选人界面：STS2-ModDev\美术参考\角色\界面图_*\char_select_*.png）
            "char_ironclad", "char_silent", "char_regent", "char_necrobinder", "char_defect",
@@ -92,6 +106,9 @@ SOUNDS = [
     "lightning_orb_passive", "victory", "deny",
     # 测试版新卡：等离子球（陨石打击）与格挡（余像）都有原版真音效
     "plasma_orb_channel", "plasma_orb_evoke", "frost_orb_passive",
+    # 设置里「VCR 回放」的定格音效：原版短促死亡重击（debug_audio 的
+    # STS_DeathStinger_v4_Short_SFX，RunHistoryScreen 里同款），见 copy_sfx.py 的 RENAMES
+    "vcr_stinger",
 ]
 
 # 整页战斗背景布景（设置里选）：assets/bg/<名>.png -> ASSET_MAP.bg[名]

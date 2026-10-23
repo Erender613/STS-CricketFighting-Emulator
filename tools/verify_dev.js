@@ -43,6 +43,9 @@ function gameSource(withExports, assetMap) {
       ' makeSeed, setSimSeed, RNG, MECHS, Unit, SEL, startMatch,' +
       ' sfx, SND, makeHeadless, endHeadless, drawArena, SET,' +
       ' OVER, tickOver, OVER_TL,' +
+      /* VCR 回放（9.6）：状态机与句柄，便于无头验证 time-line/step 数 */
+      ' VCR, VCR_TL, vcrTick, vcrSkip, vcrCancel, vcrEligible, drawVcrOverlay,' +
+      ' vcrCaptureFreeze, drawVcrFreeze,' +
       /* sfxMute 是 let（词法绑定，取不到 globalThis 上），这里挂个取值器，
          好让用例能实时看"预演/补算期间到底静音了没有"。 */
       ' get sfxMute() { return sfxMute; },' +

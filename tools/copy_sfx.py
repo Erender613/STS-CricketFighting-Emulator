@@ -22,17 +22,28 @@ FILES = [
     "lightning_orb_passive", "victory", "deny",
     # 测试版新卡：陨石打击（等离子球）/ 余像（格挡）
     "plasma_orb_channel", "plasma_orb_evoke", "frost_orb_passive",
+    # 设置里「VCR 回放」的定格音效（见下方 RENAMES）
+    "vcr_stinger",
 ]
+
+# 入库名 → 反编译工程里的原文件名（只用于改了名的素材；键 = build.py SOUNDS 里的 id，
+# 值 = debug_audio 目录里的原文件名，不带扩展名）。
+# vcr_stinger：原版短促死亡重击（TmpSfx.shortDeathStinger，RunHistoryScreen 里同款），
+# 用在「VCR 回放」定格后重新拉起胜利横幅的那一下。
+RENAMES = {
+    "vcr_stinger": "STS_DeathStinger_v4_Short_SFX",
+}
 
 if __name__ == "__main__":
     os.makedirs(DST, exist_ok=True)
     miss = []
     for name in FILES:
+        src_name = RENAMES.get(name, name)
         for ext in (".mp3", ".wav"):
-            p = os.path.join(SRC, name + ext)
+            p = os.path.join(SRC, src_name + ext)
             if os.path.isfile(p):
                 shutil.copy2(p, os.path.join(DST, name + ext))
-                print("  %-24s %s" % (name, ext))
+                print("  %-24s %s%s" % (name, ext, "" if src_name == name else "  (源: %s%s)" % (src_name, ext)))
                 break
         else:
             miss.append(name)

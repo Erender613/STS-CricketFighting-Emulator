@@ -51,6 +51,8 @@ FRAME_HSV = {
     "pink": (0.965, 0.55, 1.2),
     "blue": (0.55, 0.9, 1.0),
     "colorless": (1.0, 0.0, 1.2),   # 无色/衍生 token 卡（card_frame_colorless_mat.tres）
+    # 观者：Watcher.Code.Character/WatcherCardPool.cs 的 H=0.8 / S=0.5 / V=1（紫）
+    "purple": (0.8, 0.5, 1.0),
 }
 # card_banner_rare_mat.tres / uncommon / common（按稀有度）
 RARE_HSV = (0.563, 1.198, 1.14)
@@ -107,7 +109,8 @@ DESC = {
     # ---- 新 10 张 ----
     "pillage":          "蓄力撞击命中时立即\n释放下一击，前摇与\n伤害提高。",
     "expose":           "发射光束造成伤害和\n易伤，反射的光束\n效力减弱。",
-    "charge":           "消耗生命召唤仆从作战，\n本体状态越差\n仆从越英勇。",
+    # 2026-10-23 用户口径（加强冲锋）：召唤不再消耗生命 → 卡面文案去掉“消耗生命”
+    "charge":           "召唤仆从作战，\n本体状态越差\n仆从越英勇。",
     "sleight_of_flesh": "根据转盘方向在撞击时\n施加负面效果。",
     "darkness":         "召唤暗黑充能球攻击，\n成长并激发已有\n充能球。",
     "perfected_strike": "以黄金夹角137.5度\n相撞时造成巨额暴击。",
@@ -129,6 +132,17 @@ DESC = {
     # 所以走和其它卡一样的完整六层合成，只是做成 token 配色 + 普通（灰）稀有度。
     "soul":           "迅速消亡，碰撞敌人时\n造成少量伤害\n直接消亡。",
     "plasma":         "被收集后降下陨石。",
+    # ---- 观者 4 张主卡（文案 = D:\aaa\bbb\观者四张卡牌设定.txt 第 6-10 行原句，人工断行）----
+    "talk_to_the_hand": "召唤手掌虚影拍击\n敌人并获得格挡。",
+    "alpha":            "召唤贝塔、欧米伽。\n欧米伽释放冲击波\n造成伤害。",
+    "wish":             "根据局势许愿力大无穷、\n永生不死、名利双收。",
+    "prostrate":        "祈祷获得真言并转入\n神格，释放强大追踪\n光柱。",
+    # ---- 观者 token 卡（贝塔/欧米伽是阿尔法召唤的卡牌单位；三张许愿卡文案按 task-1 给的示例）----
+    "beta":             "阿尔法召唤的卡牌，\n数秒后生成欧米伽。",
+    "omega":            "周期释放冲击波\n造成伤害。",
+    "become_almighty":  "获得5点力量。",
+    "fame_and_fortune": "获得25金币。",
+    "live_forever":     "获得8点多层护甲。",
 }
 DESC_BOX = (79.0, 505.0, 519.0, 747.0)   # 文字区（正好夹在类型铭牌与卡底之间）
 DESC_SIZE = 40                            # 起始字号（放不下会自动收）
@@ -184,6 +198,12 @@ CARDS = [
     ("tracking",        "追踪之刃", "能力", "power",  "orange", "rare",     "art_seeking_edge.png"),
     ("soul_storm",      "灵魂风暴", "攻击", "attack", "pink",   "rare",     "art_soul_storm.png"),
     ("meteor_strike",   "陨石打击", "攻击", "attack", "blue",   "rare",     "art_meteor_strike.png"),
+    # -- 观者 4 张主卡（紫框；类型/稀有度按 mod 原卡：
+    #    TalkToTheHand=attack/uncommon、Alpha=skill/rare、WishWatcher=skill/rare、Prostrate=skill/common）--
+    ("talk_to_the_hand", "以手拒之", "攻击", "attack", "purple", "uncommon", "art_talk_to_the_hand.png"),
+    ("alpha",            "阿尔法",   "技能", "skill",  "purple", "rare",     "art_alpha.png"),
+    ("wish",             "许愿",     "技能", "skill",  "purple", "rare",     "art_wish.png"),
+    ("prostrate",        "五体投地", "技能", "skill",  "purple", "common",   "art_prostrate.png"),
 ]
 
 # 测试版新卡（不进正式选卡列表，除非设置里开了「测试版卡牌」）
@@ -199,6 +219,14 @@ TOKENS = [
 # 冲锋的「仆从俯冲」早就在用（老 token），一并放在这里统一烘
 ALL_TOKENS = TOKENS + [
     ("minion_dive", "仆从俯冲", "攻击", "attack", "colorless", "common", "art_minion_dive.png"),
+    # -- 观者 token：贝塔/欧米伽用观者紫框 + 普通稀有度；类型按 mod 原卡
+    #    （Beta = CardType.Skill、Omega = CardType.Power）--
+    ("beta",             "贝塔",     "技能", "skill",  "colorless", "common", "art_beta.png"),
+    ("omega",            "欧米伽",   "能力", "power",  "colorless", "common", "art_omega.png"),
+    # -- 观者无色许愿 token（colorless + common；类型按 task-1 = 技能）--
+    ("become_almighty",  "力大无穷", "技能", "skill",  "colorless", "common", "art_become_almighty.png"),
+    ("fame_and_fortune", "名利双收", "技能", "skill",  "colorless", "common", "art_fame_and_fortune.png"),
+    ("live_forever",     "永生不死", "技能", "skill",  "colorless", "common", "art_live_forever.png"),
 ]
 
 # 字体：标题用粗体黑体系；类型铭牌用常规字重（官方铭牌字明显更细）
